@@ -1,23 +1,12 @@
 import React, {Component} from "react";
 
 class Article extends Component {
-    // constructor(props) {
-    //     super(props);
-    //
-    //     this.state = {
-    //         isOpen: false
-    //     };
-    //
-    //     // this.handleClick = handleClick.bind(this)
-    // }
-
     state = {
-        isOpen: false
+        isOpen: true
     };
 
     render() {
         const {article} = this.props;
-        console.log('---', this.props);
         const body = this.state.isOpen && <section>{article.text}</section>;
         return (
             <div>
@@ -34,15 +23,10 @@ class Article extends Component {
     }
 
     handleClick = () => {
-        console.log('---', 'clicked');
         this.setState({
             isOpen: !this.state.isOpen
         })
     }
 }
-
-// function handleClick() {
-//     console.log('---', 'clicked')
-// }
 
 export default Article
